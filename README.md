@@ -34,3 +34,24 @@ $ psql -f table.sql {destination_dbname} -U {username} -h localhost
 ```sh
 $ pg_dump dbname | psql -h hostname dbname
 ```
+
+###Mongodb
+* Take Mongo Db Backup
+```sh
+ $ mongodump -d {db_name} -h {host} -p {port 27017}
+```
+
+* Restore the Backup
+```sh
+$ mongorestore --db {dbname} dump/{db_name}
+```
+
+* Take backup of single collection
+```sh
+$ mongodump --collection {table_name} --db {source_db}
+```
+
+* Restore specific Collection
+```sh
+$ mongorestore --collection {collection_name} --db {destination_db} {path to collection_name.bson}.bson 
+```
