@@ -55,3 +55,7 @@ $ mongodump --collection {table_name} --db {source_db}
 ```sh
 $ mongorestore --collection {collection_name} --db {destination_db} {path to collection_name.bson}.bson 
 ```
+* Backup from remote server
+```sh
+$ mongodump --host 192.168.1.2 --port 37017 --db mongodevdb --username mongodevdb --password your_password
+```
